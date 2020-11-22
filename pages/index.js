@@ -3,7 +3,7 @@ import Head from "next/head";
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Austin Gray | Music | Tour Dates | Merch</title>
+      <title>Austin Gray | Music | Tour Dates</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
