@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from 'next/image';
 
 const Home = () => (
   <div className="container">
@@ -9,7 +10,12 @@ const Home = () => (
 
     <main>
       <h1>Austin Gray</h1>
-      <p>Welcome to my site</p>
+      <Image
+        src="/img/austingray.jpg"
+        width={400}
+        height={400}
+      />
+      <p>New Music Coming Soon</p>
     </main>
 
     <footer>
