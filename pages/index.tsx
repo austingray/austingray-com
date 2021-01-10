@@ -1,6 +1,19 @@
 import Head from 'next/head';
 import Scene from '../components/Threejs/scene';
-import Banner from '../components/banner';
+import Menubar from '../components/Menubar';
+
+const state = {
+  camera: {
+    position: {
+      x: 0,
+      y: 6,
+      z: 3
+    },
+    rotation: {
+      z: 91
+    }
+  }
+};
 
 const Index = () => (
   <div>
@@ -14,7 +27,7 @@ const Index = () => (
     </div>
 
     <div className="container p-8 m-auto">
-      <Banner />
+      <Menubar />
     </div>
   </div>
 );

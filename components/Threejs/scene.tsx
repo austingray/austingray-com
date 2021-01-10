@@ -1,21 +1,16 @@
-import * as THREE from 'three';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Canvas, MeshProps, useFrame } from 'react-three-fiber';
+import React from 'react';
+import { Canvas, MeshProps } from 'react-three-fiber';
 import Box from './models/Box';
-import Wall from './models/Wall';
 import Void from './models/void';
-
-const UpdateCamera = () => {
-  useFrame(({ clock, camera }) => {
-    camera.position.z = 15 + Math.sin(clock.getElapsedTime()) * 4;
-  });
-  return null;
-};
+import Plane from './models/plane';
+import Camera from './camera';
 
 const Scene: React.FC<MeshProps> = (props) => {
   return (
-    <Canvas className="h-screen" camera={{ fov: 75, position: [0, 0, 100] }}>
-      <UpdateCamera />
+    <Canvas className="h-screen">
+      <Camera>
+        <Camera position={[0, 3, 10]} />
+      </Camera>
       <rectAreaLight
         width={3}
         height={3}
@@ -25,7 +20,7 @@ const Scene: React.FC<MeshProps> = (props) => {
         castShadow
       />
       <Box position={[0, 0, 10]} />
-      <Wall />
+      <Plane width={1000} height={1000} color="green" position={[0, 0, 1]} />
       <Void />
     </Canvas>
   );
