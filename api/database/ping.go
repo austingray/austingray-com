@@ -26,20 +26,22 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	
 	db, err := sql.Open("postgres", connStr )
 	if err != nil {
-		panic(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 	defer db.Close()
 
 	err = db.Ping()
 	if err != nil {
-		panic(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 
 	profile := JSONResponse{"Ok!"}
 
   	j, err := json.Marshal(profile)
 	
-	  if err != nil {
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
