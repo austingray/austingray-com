@@ -2,6 +2,18 @@
 
 /* Write your own custom base styles here */
 
+a:hover {
+  text-decoration: underline;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+p a:hover {
+  text-decoration: none;
+}
+
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */

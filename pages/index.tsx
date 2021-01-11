@@ -1,35 +1,19 @@
-import Head from 'next/head';
-import Scene from '../components/Threejs/scene';
-import Menubar from '../components/Menubar';
-
-const state = {
-  camera: {
-    position: {
-      x: 0,
-      y: 6,
-      z: 3
-    },
-    rotation: {
-      z: 91
-    }
-  }
-};
+import ContentContainer from '../components/content-container';
+import Paragraph from '../components/typography/paragraph';
 
 const Index = () => (
-  <div>
-    <Head>
-      <title>Austin Gray | Music | Programming</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-
-    <div className="h-screen w-screen fixed z-0">
-      <Scene />
-    </div>
-
-    <div className="container p-8 m-auto">
-      <Menubar />
-    </div>
-  </div>
+  <ContentContainer title="Home">
+    <Paragraph>
+      Thank you for coming to my website. This is the testing grounds for my
+      code. I will be building out a suite of tools as well as creating an
+      online presence to support my musical ambitions. You can view the source
+      code to this website{' '}
+      <a target="_blank" href="https://github.com/austingray/austingray-com">
+        here
+      </a>
+      .
+    </Paragraph>
+  </ContentContainer>
 );
 
 export default Index;
