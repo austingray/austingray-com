@@ -22,7 +22,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	password := os.Getenv("DATABASE_PASS")
 	host := os.Getenv("DATABASE_ADDR")
 	
-	connStr := "user="+user+" dbname="+dbname+" password="+password+" host="+host+" sslmode=enable"
+	connStr := "user="+user+" dbname="+dbname+" password="+password+" host="+host+" sslmode=require"
 	
 	db, err := sql.Open("postgres", connStr )
 	if err != nil {
