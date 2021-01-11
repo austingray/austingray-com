@@ -13,9 +13,9 @@ const Scene: React.FC<MeshProps> = (props) => {
       </Camera>
       <rectAreaLight
         width={3}
-        height={3}
+        height={8}
         color="white"
-        intensity={88}
+        intensity={18}
         position={[0, 0, 20]}
         castShadow
       />
