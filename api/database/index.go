@@ -15,8 +15,8 @@ type JSONResponse struct {
 	Status string
 }
 
-// Ping tests the database connection
-func Ping(w http.ResponseWriter, r *http.Request) {
+// Handler tests the database connection
+func Handler(w http.ResponseWriter, r *http.Request) {
 	user := os.Getenv("DATABASE_USER")
 	dbname := os.Getenv("DATABASE_NAME")
 	password := os.Getenv("DATABASE_PASS")
