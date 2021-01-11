@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"net/http"
+	"net/url"
 	"os"
 
 	// needed for postgres
@@ -22,7 +23,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	password := os.Getenv("DATABASE_PASS")
 	host := os.Getenv("DATABASE_ADDR")
 	
-	connStr := "postgres://"+user+":"+password+"@"+host+"/"+database+"?sslmode=verify-full"
+	connStr := "postgres://"+user+":"+url.QueryEscape(password)+"@"+host+"/"+database+"?sslmode=verify-full"
 	db, err := sql.Open("postgres", connStr)
 	
 	if err != nil {
