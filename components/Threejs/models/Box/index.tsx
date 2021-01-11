@@ -14,7 +14,7 @@ const Box: React.FC<MeshProps> = (props) => {
   return (
     <mesh {...props} ref={mesh}>
       <boxBufferGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial map={loader.load('/img/always-has-been.jpg')} />
+      <meshStandardMaterial attach="material" color={'hotpink'} />
     </mesh>
   );
 };
