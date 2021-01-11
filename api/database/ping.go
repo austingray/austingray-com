@@ -18,13 +18,13 @@ type JSONResponse struct {
 // Handler tests the database connection
 func Handler(w http.ResponseWriter, r *http.Request) {
 	user := os.Getenv("DATABASE_USER")
-	dbname := os.Getenv("DATABASE_NAME")
+	database := os.Getenv("DATABASE_NAME")
 	password := os.Getenv("DATABASE_PASS")
 	host := os.Getenv("DATABASE_ADDR")
 	
-	connStr := "user="+user+" dbname="+dbname+" password="+password+" host="+host+" sslmode=require"
+	connStr := "postgres://"+user+":"+password+"@"+host+"/"+database+"?sslmode=verify-full"
+	db, err := sql.Open("postgres", connStr)
 	
-	db, err := sql.Open("postgres", connStr )
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
