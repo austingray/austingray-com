@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Menubar from './menubar';
 import Scene from './threejs/scene';
 import Heading from './typography/heading';
-import Paragraph from './typography/paragraph';
 
 const ContentContainer = ({ children, title }) => (
   <div>
