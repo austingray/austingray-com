@@ -27,14 +27,14 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("postgres", connStr)
 	
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "Cannot connect to database.", http.StatusInternalServerError)
 		return
 	}
 	defer db.Close()
 
 	err = db.Ping()
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "Database ping failed.", http.StatusInternalServerError)
 		return
 	}
 
