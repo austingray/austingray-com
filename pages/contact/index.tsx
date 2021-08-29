@@ -3,6 +3,7 @@ import Paragraph from '../../components/typography/paragraph';
 
 const Index = () => (
   <ContentContainer title="Contact">
+    <Paragraph>I'm looking to partner on </Paragraph>
     <Paragraph>Get in touch any of the following ways:</Paragraph>
     <ul>
       <li>
@@ -28,16 +29,11 @@ const Index = () => (
           LinkedIn
         </a>
       </li>
-      <li>
-        <a href="https://www.instagram.com/waustingray" target="_blank">
-          Instagram
-        </a>
-      </li>
     </ul>
     <Paragraph>
       Email me: waustingray [at] gmail [dot] com
       <br />
-      Call/Text: 214-263-3024
+      Call or Text: 214-263-3024
     </Paragraph>
   </ContentContainer>
 );
