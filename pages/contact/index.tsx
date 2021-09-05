@@ -3,7 +3,6 @@ import Paragraph from '../../components/typography/paragraph';
 
 const Index = () => (
   <ContentContainer title="Contact">
-    <Paragraph>I'm looking to partner on </Paragraph>
     <Paragraph>Get in touch any of the following ways:</Paragraph>
     <ul>
       <li>
